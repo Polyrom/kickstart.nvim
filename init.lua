@@ -1,4 +1,3 @@
--- TODO: bring basic keymaps from my config (save, etc)
 -- TODO: configure tmux-navigator
 -- TODO: configure colorscheme
 -- TODO: configure lazygit
@@ -94,6 +93,27 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Save buffer
+vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = 'Save buffer' })
+
+-- Split window
+vim.keymap.set('n', 'ss', ':split<Return>', { desc = 'Split horizontally' })
+vim.keymap.set('n', 'vs', ':vsplit<Return>', { desc = 'Split vertically' })
+
+-- Increment, decrement
+vim.keymap.set('n', '+', '<C-a>', { desc = 'Increment' })
+vim.keymap.set('n', '-', '<C-x>', { desc = 'Decrement' })
+
+-- Disable yank on x
+vim.keymap.set({ 'v', 'n' }, 'x', '"_x')
+
+-- Quit all
+vim.keymap.set('n', '<leader>qa', vim.cmd.qa, { desc = '[Q]uit [A]ll without writing' })
+vim.keymap.set('n', '<leader>qwa', function()
+  vim.cmd.w()
+  vim.cmd.qa()
+end, { desc = '[Q]uit [A]ll and [W]rite' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -211,8 +231,8 @@ require('lazy').setup({
         { '<leader>d', group = '[D]ebug' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>q', group = '[Q]uit' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
@@ -393,11 +413,11 @@ require('lazy').setup({
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>cs', require('telescope.builtin').lsp_document_symbols, '[C]urrent Document [S]ymbols')
+          map('<leader>csd', require('telescope.builtin').lsp_document_symbols, '[C]urrent [S]ymbols in [D]ocument')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('<leader>csw', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[C]urrent [S]ymbols in [W]orkspace')
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
