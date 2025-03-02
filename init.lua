@@ -1,6 +1,5 @@
 -- TODO: bring basic keymaps from my config (save, etc)
 -- TODO: configure tmux-navigator
--- TODO: configure toggle autocomplete rolldown on <C-s>
 -- TODO: configure colorscheme
 -- TODO: configure lazygit
 
@@ -209,7 +208,7 @@ require('lazy').setup({
       -- Document existing key chains
       spec = {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
+        { '<leader>d', group = '[D]ebug' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
@@ -394,7 +393,7 @@ require('lazy').setup({
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+          map('<leader>cs', require('telescope.builtin').lsp_document_symbols, '[C]urrent Document [S]ymbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
@@ -862,7 +861,7 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns',
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
 
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   { import = 'custom.plugins' },
