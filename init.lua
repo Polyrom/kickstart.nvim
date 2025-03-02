@@ -1,5 +1,5 @@
 -- TODO: configure colorscheme
--- TODO: configure lazygit
+-- TODO: configure noice
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -233,6 +233,7 @@ require('lazy').setup({
         { '<leader>t', group = '[T]oggle' },
         { '<leader>q', group = '[Q]uit' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>g', group = 'Lazy[G]it' },
       },
     },
   },
