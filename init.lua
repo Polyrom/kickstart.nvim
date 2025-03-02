@@ -1,4 +1,3 @@
--- TODO: configure tmux-navigator
 -- TODO: configure colorscheme
 -- TODO: configure lazygit
 
