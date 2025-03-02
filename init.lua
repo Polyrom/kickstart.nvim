@@ -91,7 +91,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Save buffer
-vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = 'Save buffer' })
+vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = '[W]rite buffer' })
 
 -- Split window
 vim.keymap.set('n', 'ss', ':split<Return>', { desc = 'Split horizontally' })
