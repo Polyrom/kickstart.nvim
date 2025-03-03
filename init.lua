@@ -226,14 +226,15 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' }, icon = {icon = '󰘦', color = 'blue'} },
-        { '<leader>d', group = '[D]ebug', icon = {icon = '', color = 'green'} },
-        { '<leader>r', group = '[R]ename', icon = {icon = '󰑕', color = 'blue'} },
-        { '<leader>s', group = '[S]earch', icon = {icon = '', color = 'green'} },
-        { '<leader>t', group = '[T]oggle', icon = {icon = '⏼', color = 'yellow'} },
-        { '<leader>q', group = '[Q]uit', icon = {icon = '󰩈', color = 'red'} },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' }, icon = {icon = '', color = 'blue'} },
-        { '<leader>g', group = 'Lazy[G]it', icon = {icon = '', color = 'blue'} },
+        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' }, icon = { icon = '󰘦', color = 'blue' } },
+        { '<leader>d', group = '[D]ebug', icon = { icon = '', color = 'green' } },
+        { '<leader>r', group = '[R]ename', icon = { icon = '󰑕', color = 'blue' } },
+        { '<leader>s', group = '[S]earch', icon = { icon = '', color = 'green' } },
+        { '<leader>u', group = '[U]ser interface', icon = { icon = '', color = 'yellow' } },
+        { '<leader>q', group = '[Q]uit', icon = { icon = '󰩈', color = 'red' } },
+        { '<leader>t', group = '[T]est', icon = { icon = '󰙨', color = 'green' } },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' }, icon = { icon = '', color = 'blue' } },
+        { '<leader>g', group = 'Lazy[G]it', icon = { icon = '', color = 'blue' } },
       },
     },
   },
@@ -475,9 +476,9 @@ require('lazy').setup({
           --
           -- This may be unwanted, since they displace some of your code
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-            map('<leader>th', function()
+            map('<leader>uh', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, '[T]oggle Inlay [H]ints')
+            end, 'Toggle Inlay [H]ints')
           end
         end,
       })

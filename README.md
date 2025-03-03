@@ -5,8 +5,9 @@ I use it mostly for Python and Go development.
 
 + LSP
 + Fuzzy find
-+ Debugger integration
-+ Git integration
++ Debugger
++ Neotest
++ GitSigns + LazyGit
 + Tmux interoperability
 
 _As always, the config is a work in progress_
