@@ -226,14 +226,14 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ebug' },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>q', group = '[Q]uit' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-        { '<leader>g', group = 'Lazy[G]it' },
+        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' }, icon = {icon = '󰘦', color = 'blue'} },
+        { '<leader>d', group = '[D]ebug', icon = {icon = '', color = 'green'} },
+        { '<leader>r', group = '[R]ename', icon = {icon = '󰑕', color = 'blue'} },
+        { '<leader>s', group = '[S]earch', icon = {icon = '', color = 'green'} },
+        { '<leader>t', group = '[T]oggle', icon = {icon = '⏼', color = 'yellow'} },
+        { '<leader>q', group = '[Q]uit', icon = {icon = '󰩈', color = 'red'} },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' }, icon = {icon = '', color = 'blue'} },
+        { '<leader>g', group = 'Lazy[G]it', icon = {icon = '', color = 'blue'} },
       },
     },
   },
