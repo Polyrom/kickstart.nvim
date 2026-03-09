@@ -149,14 +149,15 @@ return -- LSP Plugins
           },
         },
       },
-      pyright = {
+      basedpyright = {
         settings = {
+          disableOrganizeImports = true,
           python = {
             analysis = {
               autoImportCompletions = true,
               autoSearchPaths = true,
-              typeCheckingMode = 'basic',
               useLibraryCodeForTypes = true,
+              typeCheckingMode = 'basic',
               diagnosticMode = 'openFilesOnly',
             },
           },

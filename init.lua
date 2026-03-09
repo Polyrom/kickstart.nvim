@@ -79,6 +79,10 @@ vim.o.confirm = true
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Disable yanking on x/X
+vim.keymap.set({ 'n', 'x' }, 'x', '"_x', { desc = 'Delete char without yanking' })
+vim.keymap.set({ 'n', 'x' }, 'X', '"_X', { desc = 'Delete char before cursor without yanking' })
+
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
